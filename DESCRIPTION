@@ -1,0 +1,17 @@
+Package: myPlots 
+Title: A sort of user-defined plot functions by Yasu Sato
+Version: 0.0.0.9000
+Authors@R: 
+    person(given = "Yasuhiro",
+           family = "Sato",
+           role = c("aut", "cre"),
+           email = "sato.yasuhiro.36c@kyoto-u.jp",
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: This package includes a set of plot functions developed by Yasu Sato.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.0
+Imports: 
+    ggplot2
