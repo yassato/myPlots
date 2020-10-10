@@ -4,7 +4,7 @@
 \alias{my_violinPlot}
 \title{Depicting violin jitter plots}
 \usage{
-my_violinPlot(x, y, data = NULL, ...)
+my_violinPlot(x, y, data = NULL, xlab = NULL, ylab = NULL, ...)
 }
 \arguments{
 \item{x}{A numeric vector for the x-axis, factorized within the function.}
@@ -13,10 +13,14 @@ my_violinPlot(x, y, data = NULL, ...)
 
 \item{data}{A data.frame to be specified for a plot.}
 
+\item{xlab}{Option to change the label of x-axis.}
+
+\item{ylab}{Option to change the label of y-axis.}
+
 \item{...}{Other arguments passed to geom_jitter().}
 }
 \description{
-A simplfied ggplot function to project violins and boxes on jitter plots.
+A simplfied ggplot to project violins and boxes on jitter plots.
 }
 \author{
 Yasuhiro Sato (\email{sato.yasuhiro.36c@kyoto-u.jp})
