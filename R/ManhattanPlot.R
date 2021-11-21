@@ -3,7 +3,7 @@
 #' A simple plot function to draw Manhattan plot for GWAS results.
 #' @param chr Chromosome number. It should have the same length as \code{pos} and \code{p}.
 #' @param pos Positions on the chromosomes.
-#' @param p A vector of p-values ranging from 0 to 1.
+#' @param p A vector of p-values ranging from 0 to 1. If it is outside 0 or 1, p is not log10-transformed.
 #' @param ... Other arguments passed to plot().
 #' @author Yasuhiro Sato (\email{sato.yasuhiro.36c@kyoto-u.jp})
 #' @export
@@ -31,7 +31,11 @@ ManhattanPlot = function(chr, pos, p, ...) {
   args$xaxt <- "n"
   args$bty <- "n"
   args$x <- coord
-  args$y <- -log10(p)
+  if(sum((p<=1)&(p>0),na.rm=TRUE)==length(na.omit(p))) {
+    args$y <- -log10(p)
+  } else {
+    args$y <- p
+  }
   do.call(plot,args)
   abline(h=-log10(th),lty=2,col="grey")
 }
