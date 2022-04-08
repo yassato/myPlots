@@ -11,7 +11,7 @@ my_ManhattanPlot(chr, pos, p, ...)
 
 \item{pos}{Positions on the chromosomes.}
 
-\item{p}{A vector of p-values ranging from 0 to 1.}
+\item{p}{A vector of p-values ranging from 0 to 1. If it is outside 0 or 1, p is not log10-transformed.}
 
 \item{...}{Other arguments passed to geom_point().}
 }

@@ -3,7 +3,7 @@
 #' A simple ggplot function to draw Manhattan plot for GWAS results.
 #' @param chr Chromosome number. It should have the same length as \code{pos} and \code{p}.
 #' @param pos Positions on the chromosomes.
-#' @param p A vector of p-values ranging from 0 to 1.
+#' @param p A vector of p-values ranging from 0 to 1. If it is outside 0 or 1, p is not log10-transformed.
 #' @param ... Other arguments passed to geom_point().
 #' @author Yasuhiro Sato (\email{sato.yasuhiro.36c@kyoto-u.jp})
 #' @import ggplot2
