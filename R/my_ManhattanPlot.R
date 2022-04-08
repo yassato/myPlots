@@ -29,7 +29,13 @@ my_ManhattanPlot = function(chr, pos, p, ...) {
 
   th <- 0.05/length(p)
 
-  ggplot2::ggplot(data=NULL, mapping=ggplot2::aes(x=coord,y=-log10(p)))+
+  if(sum((p<=1)&(p>0),na.rm=TRUE)==length(stats::na.omit(p))) {
+    p <- -log10(p)
+  } else {
+    p <- p
+  }
+
+  ggplot2::ggplot(data=NULL, mapping=ggplot2::aes(x=coord,y=p))+
     do.call(ggplot2::geom_point,list(...))+
     ggplot2::geom_hline(yintercept=-log10(th),linetype="dashed",colour="grey")+
     ggplot2::theme_classic()+

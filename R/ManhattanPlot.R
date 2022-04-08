@@ -28,11 +28,11 @@ ManhattanPlot = function(chr, pos, p, ...) {
   args$xaxt <- "n"
   args$bty <- "n"
   args$x <- coord
-  if(sum((p<=1)&(p>0),na.rm=TRUE)==length(na.omit(p))) {
+  if(sum((p<=1)&(p>0),na.rm=TRUE)==length(stats::na.omit(p))) {
     args$y <- -log10(p)
   } else {
     args$y <- p
   }
   do.call(plot,args)
-  abline(h=-log10(th),lty=2,col="grey")
+  graphics::abline(h=-log10(th),lty=2,col="grey")
 }

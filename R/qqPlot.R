@@ -16,5 +16,5 @@ qqPlot = function(p,...) {
   args$xlab <- "Expected -log10(P)"
   args$ylab <- "Observed -log10(P)"
   do.call(plot,args)
-  abline(a=0,b=1,lty=2,col="grey")
+  graphics::abline(a=0,b=1,lty=2,col="grey")
 }
